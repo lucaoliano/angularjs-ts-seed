@@ -18,7 +18,33 @@ module.exports = function(config) {
     files: [
       '../node_modules/angular/angular.js',
       '../node_modules/angular-mocks/angular-mocks.js',
-      '../node_modules/angular-new-router/dist/router.es5.js',
+      '../node_modules/@angular/router/angular1/angular_1_router.js',
+      '../node_modules/angular-aria/angular-aria.js',
+      '../node_modules/angular-animate/angular-animate.js',
+      '../node_modules/angular-messages/angular-messages.js',
+      '../node_modules/angular-material/angular-material.js',
+      '../node_modules/angular-material/angular-material-mocks.js',
+      '../node_modules/angular-cookies/angular-cookies.js',
+      // '../node_modules/angular-touch/angular-touch.js',
+      '../node_modules/angular-sanitize/angular-sanitize.js',
+
+      '../node_modules/d3/d3.js',
+      '../node_modules/nvd3/build/nv.d3.js',
+      '../node_modules/angular-nvd3/dist/angular-nvd3.js',
+
+      '../node_modules/codemirror/lib/codemirror.js',
+      '../node_modules/codemirror/mode/meta.js',
+      '../node_modules/codemirror/mode/css/css.js',
+      '../node_modules/codemirror/mode/xml/xml.js',
+      '../node_modules/codemirror/mode/javascript/javascript.js',
+      '../node_modules/codemirror/mode/htmlmixed/htmlmixed.js',
+      '../node_modules/codemirror/mode/sass/sass.js',
+      '../node_modules/codemirror/addon/display/autorefresh.js',
+      '../node_modules/angular-ui-codemirror/src/ui-codemirror.js',
+
+      '../node_modules/angular-typescript/lib/at-angular.js',
+      '../node_modules/angular-typescript/lib/at-angular-resource.js',
+
       '../test/**/*.js',
       '../test/**/*.spec.js'
     ],
@@ -32,7 +58,16 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '../test/**/!(at-)*.js': ['commonjs']
+      '../test/**/!(at-)*.js': ['commonjs'],
+      '../test/components/**/!(*.spec)+(.js)': ['coverage'],
+    },
+
+    // Generate json used for remap-istanbul
+    coverageReporter: {
+      dir: '../test/report/',
+      reporters: [
+        { type: 'json', subdir: 'report-json' }
+      ]
     },
 
     // plugins: [
@@ -43,7 +78,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
 
 
     // web server port

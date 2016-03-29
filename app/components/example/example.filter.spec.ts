@@ -19,7 +19,6 @@ describe('# Example Filter', () => {
     $inject((_$log_, _$filter_) => {
       $log = _$log_;
       filter = _$filter_('example');
-      debugger;
     });
   });
 
