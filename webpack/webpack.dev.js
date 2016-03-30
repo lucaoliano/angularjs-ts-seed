@@ -17,7 +17,7 @@ module.exports = {
    this.entry.app.push(name);
   },
     entry: {
-      app: ['./app/init.ts', './app/import.html.js'],
+      app: ['./app/init.ts'],
       //vendor: ['angular'].concat(angular),
       vendor: []
 
