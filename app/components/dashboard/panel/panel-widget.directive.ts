@@ -1,5 +1,7 @@
 import ngModuleName from './panel.module';
 
+import './widget/visitor.tpl.html'
+
 'use strict';
 
 const ngDirectiveName = 'tsfnPanelWidget';
@@ -14,7 +16,7 @@ const ngDirectiveName = 'tsfnPanelWidget';
     template: '@',
     options: '@'
   },
-  templateUrl: 'dashboard/panel/panel-widget.directive.html'
+  templateUrl: require('./panel-widget.directive.html')
   // compile: (element, attrs, linker) => (scope, element) => {
   //   linker(scope, clone => {
   //     element.append(clone);

@@ -7,7 +7,7 @@ import TableService from './table.service';
 const ngComponentName = 'tsfnTable';
 
 @at.component(ngModuleName, ngComponentName, {
-  templateUrl: 'table/table.component.html',
+  templateUrl: require('./table.component.html'),
 })
 @at.inject('tableService', '$log')
 export default class TableComponent implements at.OnInit, at.OnActivate {
@@ -15,10 +15,10 @@ export default class TableComponent implements at.OnInit, at.OnActivate {
   public tableData = [];
 
   public files = [
-    'components/table/table.component.html',
-    'components/table/table.component.ts',
-    'components/table/table.service.ts',
-    'components/table/table.module.ts'
+    require('./table.component.html'),
+    require('./table.component.ts'),
+    require('./table.service.ts'),
+    require('./table.module.ts')
   ];
 
   constructor(private tableService: TableService,

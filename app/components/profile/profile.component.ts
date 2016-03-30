@@ -5,7 +5,7 @@ import ngModuleName from './profile.module';
 const ngComponentName = 'tsfnProfile';
 
 @at.component(ngModuleName, ngComponentName, {
-  templateUrl: 'profile/profile.component.html',
+  templateUrl: require('./profile.component.html'),
 })
 @at.inject('$log')
 export default class ProfileComponent implements at.OnActivate {
@@ -26,9 +26,9 @@ export default class ProfileComponent implements at.OnActivate {
   };
 
   public files = [
-    'components/profile/profile.component.html',
-    'components/profile/profile.component.ts',
-    'components/profile/profile.module.ts'
+    require('./profile.component.html'),
+    require('./profile.component.ts'),
+    require('./profile.module.ts')
   ];
 
   constructor(private log: angular.ILogService) {

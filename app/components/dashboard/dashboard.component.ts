@@ -5,7 +5,7 @@ import ngModuleName from './dashboard.module';
 const ngComponentName = 'tsfnDashboard';
 
 @at.component(ngModuleName, ngComponentName, {
-  templateUrl: 'dashboard/dashboard.component.html',
+  templateUrl: require('./dashboard.component.html')
 })
 @at.inject('$log')
 export default class DashboardComponent implements at.OnActivate {
@@ -13,41 +13,41 @@ export default class DashboardComponent implements at.OnActivate {
 
   public files = [
     [
-      'components/dashboard/dashboard.component.html',
-      'components/dashboard/dashboard.component.ts',
-      'components/dashboard/dashboard.module.ts',
+      require('./dashboard.component.html'),
+      require('./dashboard.component.ts'),
+      require('./dashboard.module.ts'),
     ], [
-      'components/dashboard/panel/panel-widget.directive.html',
-      'components/dashboard/panel/panel-widget.directive.ts',
-      'components/dashboard/panel/panel.module.ts',
-      'components/dashboard/panel/widget/widget.module.ts',
+      require('./panel/panel-widget.directive.html'),
+      require('./panel/panel-widget.directive.ts'),
+      require('./panel/panel.module.ts'),
+      require('./panel/widget/widget.module.ts'),
     ], [
-      'components/dashboard/panel/widget/visitor.controller.ts',
-      'components/dashboard/panel/widget/visitor.model.ts',
-      'components/dashboard/panel/widget/visitor.service.ts',
-      'components/dashboard/panel/widget/visitor.tpl.html',
-      'components/dashboard/panel/widget/warning.controller.ts',
-      'components/dashboard/panel/widget/warning.tpl.html',
-      'components/dashboard/panel/widget/memory.controller.ts',
-      'components/dashboard/panel/widget/memory.tpl.html',
+      require('./panel/widget/visitor.controller.ts'),
+      require('./panel/widget/visitor.model.ts'),
+      require('./panel/widget/visitor.service.ts'),
+      require('./panel/widget/visitor.tpl.html'),
+      require('./panel/widget/warning.controller.ts'),
+      require('./panel/widget/warning.tpl.html'),
+      require('./panel/widget/memory.controller.ts'),
+      require('./panel/widget/memory.tpl.html'),
     ], [
-      'components/dashboard/panel/widget/control-panel.controller.ts',
-      'components/dashboard/panel/widget/control-panel.tpl.html',
-      'components/dashboard/panel/widget/usage.controller.ts',
-      'components/dashboard/panel/widget/usage.model.ts',
-      'components/dashboard/panel/widget/usage.service.ts',
-      'components/dashboard/panel/widget/usage.tpl.html',
-      'components/dashboard/panel/widget/autocomplete.controller.ts',
-      'components/dashboard/panel/widget/autocomplete.tpl.html',
+      require('./panel/widget/control-panel.controller.ts'),
+      require('./panel/widget/control-panel.tpl.html'),
+      require('./panel/widget/usage.controller.ts'),
+      require('./panel/widget/usage.model.ts'),
+      require('./panel/widget/usage.service.ts'),
+      require('./panel/widget/usage.tpl.html'),
+      require('./panel/widget/autocomplete.controller.ts'),
+      require('./panel/widget/autocomplete.tpl.html'),
     ], [
-      'components/dashboard/panel/widget/performance.controller.ts',
-      'components/dashboard/panel/widget/performance.model.ts',
-      'components/dashboard/panel/widget/performance.service.ts',
-      'components/dashboard/panel/widget/performance.tpl.html',
-      'components/dashboard/panel/widget/todo.controller.ts',
-      'components/dashboard/panel/widget/todo.model.ts',
-      'components/dashboard/panel/widget/todo.service.ts',
-      'components/dashboard/panel/widget/todo.tpl.html',
+      require('./panel/widget/performance.controller.ts'),
+      require('./panel/widget/performance.model.ts'),
+      require('./panel/widget/performance.service.ts'),
+      require('./panel/widget/performance.tpl.html'),
+      require('./panel/widget/todo.controller.ts'),
+      require('./panel/widget/todo.model.ts'),
+      require('./panel/widget/todo.service.ts'),
+      require('./panel/widget/todo.tpl.html'),
     ]
   ];
 

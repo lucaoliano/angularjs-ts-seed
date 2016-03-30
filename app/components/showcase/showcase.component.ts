@@ -18,7 +18,7 @@ const ngComponentName = 'tsfnShowcase';
     lazy: '<',
     title: '@'
   },
-  templateUrl: 'showcase/showcase.component.html'
+  templateUrl: require('./showcase.component.html')
 })
 @at.inject('showcase', '$log', '$q', '$timeout')
 export default class ShowcaseComponent implements at.OnInit {

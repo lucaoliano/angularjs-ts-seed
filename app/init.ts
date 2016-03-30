@@ -1,14 +1,19 @@
 /// <reference path="../typings/custom.system.d.ts" />
 /// <reference path="../typings/browser.d.ts" />
 
-System.config({
-  paths: { '*': '*.js?v=<%= VERSION %>' }
-});
+import './app';
 
-System.import('./app').then(System.import('./partials')).then(() => {
-  angular.module('app').requires.push('tpl');
+import "./app.css";
+import "./index.scss";
+import "./stylesheets/_custom.scss";
+import "./stylesheets/_table.scss";
 
-  angular.element(document)
-    .ready(() => angular.bootstrap(document.body, ['app']));
-})
-  .catch(console.error.bind(console));
+// import at = require('angular-typescript');
+
+  angular.module('app'); // .requires.push('tpl');
+
+  angular.element(document).ready(function() {
+      console.log('bootstrap start');
+      angular.bootstrap(document, ['app']);
+      console.log('bootstrap end');
+    });

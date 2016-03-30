@@ -7,7 +7,7 @@ import NavigationService from '../common/navigation.service';
 const ngComponentName = 'tsfnMain';
 
 @at.component(ngModuleName, ngComponentName, {
-  templateUrl: 'main/main.component.html',
+  templateUrl: require('./main.component.html'),
   $routeConfig: [
     { path: '/dashboard', name: 'Dashboard', component: 'tsfnDashboard', data: { title: 'Dashboard' }, useAsDefault: true },
     { path: '/profile', name: 'Profile', component: 'tsfnProfile', data: { title: 'Profile' } },
@@ -44,7 +44,7 @@ export default class MainComponent implements at.OnInit {
   public showActions($event: MouseEvent) {
     this.mdBottomSheet.show({
       parent: angular.element(document.getElementById('content')),
-      templateUrl: 'bottom-sheet/bottom-sheet.tpl.html',
+      templateUrl: require('../bottom-sheet/bottom-sheet.tpl.html'),
       controller: BottomSheetController,
       controllerAs: 'vm',
       bindToController: true,

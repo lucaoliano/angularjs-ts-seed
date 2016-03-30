@@ -25,13 +25,13 @@ let app = angular.module('app', [
     console.log('App.directive', 'init');
   },
   restrict: 'E',
-  templateUrl: 'app.html?v=<%= VERSION %>'
+  templateUrl: require('./app.html')
 })
 class AppController {
 }
 
 @at.component('app', ngMainComponentName, {
-  templateUrl: 'app.html?v=<%= VERSION %>',
+  templateUrl: require('./app.html'),
   $routeConfig: [
     { path: '/...', name: 'Main', component: 'tsfnMain' },
   ]
